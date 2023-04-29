@@ -48,3 +48,26 @@ body {
     background: #08038C;
     color: #f6f6f6;
 }
+
+.next-btn {
+    border: none;
+    outline: none;
+    background: 255, 25, 255, 0.5;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+    margin: 10px;
+}
+
+.next-btn:hover{
+    background: #08038C;
+    color: #f6f6f6;
+}
+
+.result {
+    height: 100px;
+    text-align: center;
+    font-size: 75px;
+}
