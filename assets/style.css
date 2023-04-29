@@ -43,3 +43,8 @@ body {
     color: #000000;
     border-radius: 20px;
 }
+
+.option:hover {
+    background: #08038C;
+    color: #f6f6f6;
+}
