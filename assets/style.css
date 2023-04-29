@@ -52,7 +52,7 @@ body {
 .next-btn {
     border: none;
     outline: none;
-    background: 255, 25, 255, 0.5;
+    background: rgba(255, 25, 255, 0.5);
     width: 100px;
     height: 35px;
     border-radius: 20px;
@@ -70,4 +70,9 @@ body {
     height: 100px;
     text-align: center;
     font-size: 75px;
+}
+
+.option input:checked .option{
+    background: #08038C;
+    color: #000;
 }
