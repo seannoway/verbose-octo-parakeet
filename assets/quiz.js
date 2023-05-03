@@ -73,7 +73,9 @@ function countdown () {
     }else if (timeLeft === 0){
       clearInterval(timeInterval);
       timer.textContent = "";
-      finishedPageDisplay();
+      container.style.display = 'none'; //hides container when questions are done
+        resultCont.style.display = '';
+        resultCont.textContent = 'Your Score: ' + score; 
     }
   }, 600)
 }
@@ -124,5 +126,6 @@ function loadNextQuestion () {
     }
     loadQuestion(currentQuestion);
 }
+
 
 // loadQuestion(currentQuestion); //manually loads first question will add start button later
