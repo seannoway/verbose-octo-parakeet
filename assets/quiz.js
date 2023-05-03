@@ -104,4 +104,4 @@ function loadNextQuestion () {
     loadQuestion(currentQuestion);
 }
 
-loadQuestion(currentQuestion); //manually loads first question will add start button later
+// loadQuestion(currentQuestion); //manually loads first question will add start button later
