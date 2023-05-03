@@ -54,9 +54,30 @@ var questions = [{
     "option3": "Do Or Do Not, There Is No Try",
     "option4": "I Done Caught 'Em",
     "answer": "2"
+}];
+var startBtn = document.getElementById('startButton')
+startBtn.addEventListener('click', startQuiz);
+function startQuiz() {
+    countdown();
+    loadQuestion(currentQuestion);
+}
+var timer = document.querySelector('.timerText')
+// timeLeft is set to 60 so that the timer will start with 60 seconds
+timeLeft = 60;
+// countdown function sets the timer and has it decreasing every second
+function countdown () {
+   timeInterval = setInterval(function() {
+    if (timeLeft > 0) {
+      timer.textContent = timeLeft;
+      timeLeft--;
+    }else if (timeLeft === 0){
+      clearInterval(timeInterval);
+      timer.textContent = "";
+      finishedPageDisplay();
+    }
+  }, 600)
 }
 
-]
 var currentQuestion = 0;
 var score = 0;
 var totalQuestions = questions.length;
@@ -90,7 +111,7 @@ function loadNextQuestion () {
         score += 1;
     }
     selectedOption.checked = false;
-    // timeLeft -= 5; // Takes 5 seconds off the timer if answer is incorrect
+    timeLeft -= 5; // Takes 5 seconds off the timer if answer is incorrect
     currentQuestion++;
     if(currentQuestion == totalQuestions -1){
         nextButton.textContent = "Finish"; //Changes next button to "finish" when on the last question

@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,25 +7,30 @@
     <title>Quiz</title>
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 
 </head>
+<nav>
+    <div class="timer">Time: <span class="timerText">0</span></div>
+</nav>
+
 <body>
     <div id="quizContainer" class="container">
         <div class="title">Computer Quiz</div>
         <div id="question" class="question"></div>
-        <label class="option"><input type="radio" name="option" value="1"/> <span id="opt1"></span></label>
-        <label class="option"><input type="radio" name="option" value="2"/> <span id="opt2"></span></label>
-        <label class="option"><input type="radio" name="option" value="3"/> <span id="opt3"></span></label>
-        <label class="option"><input type="radio" name="option" value="4"/> <span id="opt4"></span></label>
+        <label class="option"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
+        <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
+        <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
+        <label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
         <button id="nextButton" class="next-btn" onCLick="loadNextQuestion();">Next Question</button>
-        <button id="startButton" class ="startButton" onCLick="loadQuestion(currentQuestion)();" >Start Quiz</button>
-        </div>
-        <div id="result" class="container result" style="display:none;">
-        </div>
-        <!-- <script src="/assets/question.js"></script> -->
-        <script src="./assets/quiz.js"></script>
+        <button id="startButton" class="startButton" onCLick="loadQuestion(currentQuestion)();">Start Quiz</button>
+    </div>
+    <div id="result" class="container result" style="display:none;">
+    </div>
+    <!-- <script src="/assets/question.js"></script> -->
+    <script src="./assets/quiz.js"></script>
 </body>
+
 </html>

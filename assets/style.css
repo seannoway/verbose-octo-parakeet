@@ -16,6 +16,13 @@ body {
     box-shadow: 0 0 8px 3px #fff;
 }
 
+.timer {
+    padding-top: 20px;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #08038C;
+}
+
 .title {
     padding-top: 20px;
     text-align: center;
