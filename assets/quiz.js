@@ -66,7 +66,7 @@ var timer = document.querySelector('.timerText')
 timeLeft = 60;
 // countdown function sets the timer and has it decreasing every second
 function countdown () {
-   timeInterval = setInterval(function() {
+   let timeInterval = setInterval(function() {
     if (timeLeft > 0) {
       timer.textContent = timeLeft;
       timeLeft--;
@@ -74,8 +74,8 @@ function countdown () {
       clearInterval(timeInterval);
       timer.textContent = "";
       container.style.display = 'none'; //hides container when questions are done
-        resultCont.style.display = '';
-        resultCont.textContent = 'Your Score: ' + score; 
+      resultCont.setAttribute("style","display:block");
+      scoreTag.textContent = 'Your Score: ' + score;
     }
   }, 600)
 }
@@ -92,7 +92,7 @@ var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
-
+var scoreTag = document.getElementById('score');
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
     questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
@@ -120,12 +120,23 @@ function loadNextQuestion () {
     }
     if(currentQuestion == totalQuestions){
         container.style.display = 'none'; //hides container when questions are done
-        resultCont.style.display = '';
-        resultCont.textContent = 'Your Score: ' + score; //displays score at end of quiz
+        resultCont.setAttribute("style","display:block");
+        scoreTag.textContent = 'Your Score: ' + score; //displays score at end of quiz
         return;
     }
     loadQuestion(currentQuestion);
 }
+var initialfield = document.getElementById('initials');
+function saveScores() {
+    let lastCcore={
+        hscore: score,
+        initial: initialfield.value,
+    }
+    localStorage.setItem("savedScores", JSON.stringify(lastCcore));
+}
+// add event listener to view highscores that pulls from local storage and appends 
+
+
 
 
 // loadQuestion(currentQuestion); //manually loads first question will add start button later

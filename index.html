@@ -13,7 +13,12 @@
 
 </head>
 <nav>
+    <div class="highScores">
+        <button id="score-btn">View Highscore</button>
+        <h2 id="high-score"></h2>
+    </div>
     <div class="timer">Time: <span class="timerText">0</span></div>
+    
 </nav>
 
 <body>
@@ -28,7 +33,10 @@
         <button id="startButton" class="startButton" onCLick="loadQuestion(currentQuestion)();">Start Quiz</button>
     </div>
     <div id="result" class="container result" style="display:none;">
-        <label>Enter your initals: </label><input type="text" id="initals"><button id="submitInitals">Submit</button>
+        <h2 id="score"></h2>
+        <label>Enter your initals: </label>
+        <input type="text" id="initals">
+        <button id="submitInitals">Submit</button>
     </div>
     <!-- <script src="/assets/question.js"></script> -->
     <script src="./assets/quiz.js"></script>
