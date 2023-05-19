@@ -100,3 +100,7 @@ body {
     background: #08038C;
     color: #000;
 }
+
+.hide {
+    display: none;
+}

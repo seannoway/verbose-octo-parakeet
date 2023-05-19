@@ -5,56 +5,61 @@ var questions = [{
     "option3": "Ketchum",
     "option4": "Ketchup",
     "answer": "3"
-}, {
-    "question": "What was Ash's first Pokemon?",
-    "option1": "Pikachu",
-    "option2": "Caterpie",
-    "option3": "Squirtle",
-    "option4": "Pidgey",
-    "answer": "1"
-}, {
-    "question": "What year did the first Pokemon movie come out?",
-    "option1": "1999",
-    "option2": "2000",
-    "option3": "1996",
-    "option4": "1998",
-    "answer": "4"
-}, {
-    "question": "What Pokedex number is Pikachu?",
-    "option1": "24",
-    "option2": "25",
-    "option3": "26",
-    "option4": "007",
-    "answer": "2"
-}, {
-    "question": "Charizard is what type of Pokemon?",
-    "option1": "Water",
-    "option2": "Char",
-    "option3": "Fire",
-    "option4": "Dragon",
-    "answer": "3"
-}, {
-    "question": "How many original Pokemon were there?",
-    "option1": "151",
-    "option2": "150",
-    "option3": "149",
-    "option4": "350",
-    "answer": "1"
-}, {
-    "question": "Who is #1 in the Pokedex?",
-    "option1": "Charmander",
-    "option2": "Pikachu",
-    "option3": "Squirtle",
-    "option4": "Bulbasaur",
-    "answer": "4"
-}, {
-    "question": "The English motto of Pokemon is?",
-    "option1": "Catch'Em",
-    "option2": "Gotta Catch 'Em All!",
-    "option3": "Do Or Do Not, There Is No Try",
-    "option4": "I Done Caught 'Em",
-    "answer": "2"
-}];
+}, 
+// {
+//     "question": "What was Ash's first Pokemon?",
+//     "option1": "Pikachu",
+//     "option2": "Caterpie",
+//     "option3": "Squirtle",
+//     "option4": "Pidgey",
+//     "answer": "1"
+// }, {
+//     "question": "What year did the first Pokemon movie come out?",
+//     "option1": "1999",
+//     "option2": "2000",
+//     "option3": "1996",
+//     "option4": "1998",
+//     "answer": "4"
+// }, {
+//     "question": "What Pokedex number is Pikachu?",
+//     "option1": "24",
+//     "option2": "25",
+//     "option3": "26",
+//     "option4": "007",
+//     "answer": "2"
+// }, {
+//     "question": "Charizard is what type of Pokemon?",
+//     "option1": "Water",
+//     "option2": "Char",
+//     "option3": "Fire",
+//     "option4": "Dragon",
+//     "answer": "3"
+// }, {
+//     "question": "How many original Pokemon were there?",
+//     "option1": "151",
+//     "option2": "150",
+//     "option3": "149",
+//     "option4": "350",
+//     "answer": "1"
+// }, {
+//     "question": "Who is #1 in the Pokedex?",
+//     "option1": "Charmander",
+//     "option2": "Pikachu",
+//     "option3": "Squirtle",
+//     "option4": "Bulbasaur",
+//     "answer": "4"
+// }, {
+//     "question": "The English motto of Pokemon is?",
+//     "option1": "Catch'Em",
+//     "option2": "Gotta Catch 'Em All!",
+//     "option3": "Do Or Do Not, There Is No Try",
+//     "option4": "I Done Caught 'Em",
+//     "answer": "2"
+// }
+];
+var highScores = JSON.parse(localStorage.getItem('savedScores')) || []
+
+
 var startBtn = document.getElementById('startButton')
 startBtn.addEventListener('click', startQuiz);
 function startQuiz() {
@@ -128,13 +133,26 @@ function loadNextQuestion () {
 }
 var initialfield = document.getElementById('initials');
 function saveScores() {
-    let lastCcore={
+    let lastScore= {
         hscore: score,
         initial: initialfield.value,
     }
-    localStorage.setItem("savedScores", JSON.stringify(lastCcore));
+highScores.push(lastScore)
+    console.table(lastScore)
+    localStorage.setItem("savedScores", JSON.stringify(highScores));
 }
 // add event listener to view highscores that pulls from local storage and appends 
+var submitInitals = document.getElementById('submitInitals');
+submitInitals.addEventListener('click', saveScores);
+
+var scoreTable = document.getElementById('scoreTable');
+var viewScore = document.getElementById('score-btn');
+viewScore.addEventListener('click', () => {
+    console.log("jingle bellse")
+    scoreTable.classList.remove("hide");
+} )
+
+
 
 
 

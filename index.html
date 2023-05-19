@@ -29,14 +29,19 @@
         <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
         <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
         <label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
-        <button id="nextButton" class="next-btn" onCLick="loadNextQuestion();">Next Question</button>
-        <button id="startButton" class="startButton" onCLick="loadQuestion(currentQuestion)();">Start Quiz</button>
+        <button id="nextButton" class="next-btn" onclick="loadNextQuestion();">Next Question</button>
+        <button id="startButton" class="startButton" onclick="loadQuestion(currentQuestion)();">Start Quiz</button>
     </div>
     <div id="result" class="container result" style="display:none;">
         <h2 id="score"></h2>
         <label>Enter your initals: </label>
-        <input type="text" id="initals">
+        <input type="text" id="initials">
         <button id="submitInitals">Submit</button>
+    </div>
+    <div id="scoreTable" class="hide">
+        <h1>HELLO</h1>
+        <button id="scores">Close</button>
+
     </div>
     <!-- <script src="/assets/question.js"></script> -->
     <script src="./assets/quiz.js"></script>
